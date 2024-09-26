@@ -1,4 +1,3 @@
-import { useReducer } from "react";
 import { Type } from "./action.type";
 
 export const initialState = {
@@ -8,11 +7,11 @@ export const initialState = {
 
 export const reducer = (state, action) => {
     switch (action.type) {
-        case Type.ADD_TO_BASKET: {
+        case Type.ADD_TO_BASKET:
+            // * check if the item exists
             const existingItem = state.basket.find(
                 (item) => item.id === action.item.id
             );
-
             if (!existingItem) {
                 return {
                     ...state,
@@ -30,25 +29,25 @@ export const reducer = (state, action) => {
                     basket: updatedBasket,
                 };
             }
-        }
-        case Type.REMOVE_FROM_BASKET: {
-            const updatedBasket = state.basket
-                .map((item) => {
-                    if (item.id === action.id) {
-                        return {
-                            ...item,
-                            amount: item.amount - 1,
-                        };
-                    }
-                    return item;
-                })
-                .filter((item) => item.amount > 0);
 
+        case Type.REMOVE_FROM_BASKET:
+            const index = state.basket.findIndex((item) => item.id === action.id);
+            let newBasket = [...state.basket];
+
+            if (index >= 0) {
+                if (newBasket[index].amount > 1) {
+                    newBasket[index] = {
+                        ...newBasket[index],
+                        amount: newBasket[index].amount - 1,
+                    };
+                } else {
+                    newBasket.splice(index, 1);
+                }
+            }
             return {
                 ...state,
-                basket: updatedBasket,
+                basket: newBasket,
             };
-        }
         case Type.EMPTY_BASKET:
             return {
                 ...state,
@@ -64,5 +63,3 @@ export const reducer = (state, action) => {
             return state;
     }
 };
-
-/* const [state , dispatch] = useReducer(reducer, initalState) */

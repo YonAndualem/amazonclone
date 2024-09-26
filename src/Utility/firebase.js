@@ -4,12 +4,12 @@ import "firebase/compat/firestore";
 import "firebase/compat/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDh1cJ_6SMYf0k3N-tJk0N4kSE-o13LZrw",
-    authDomain: "evangadi--clone-aa7e3.firebaseapp.com",
-    projectId: "evangadi--clone-aa7e3",
-    storageBucket: "evangadi--clone-aa7e3.appspot.com",
-    messagingSenderId: "174336399354",
-    appId: "1:174336399354:web:a0a9fbfda428fe98deb643",
+    apiKey: "AIzaSyAM52fZUsZ-TP4j-LHpjFsK_390p_KRKmU",
+    authDomain: "clone-24dff.firebaseapp.com",
+    projectId: "clone-24dff",
+    storageBucket: "clone-24dff.appspot.com",
+    messagingSenderId: "734200897400",
+    appId: "1:734200897400:web:113496cdcc889b4473728d",
 };
 
 const app = firebase.initializeApp(firebaseConfig);

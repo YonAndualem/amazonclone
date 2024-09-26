@@ -168,7 +168,6 @@
     align-items: center;
 }
 
-/* sidebar css */
 .hamberger_btn {
     cursor: pointer;
 }
@@ -187,7 +186,6 @@
     transform: translateX(-420px);
 }
 
-/* animation */
 .overlay {
     position: fixed;
     top: 0;
@@ -232,7 +230,6 @@
     font-weight: bold;
 }
 
-/* expand the entire sidenav outwards */
 @keyframes moveSideBar {
     0% {
         transform: translateX(-420px);
@@ -244,7 +241,6 @@
     }
 }
 
-/* general fade into existence */
 @keyframes show {
     0% {
         opacity: 0;
